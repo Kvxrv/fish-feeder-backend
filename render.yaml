@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: fish-feeder-backend
+    runtime: python
+    plan: free
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: DB_NAME
+        value: fish_feeder
+      - key: APP_API_KEY
+        sync: false
+      - key: DEVICE_API_KEY
+        sync: false
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
