@@ -3,6 +3,7 @@ services:
     name: fish-feeder-backend
     runtime: python
     plan: free
+    pythonVersion: 3.10.14
     envVars:
       - key: MONGO_URI
         sync: false
